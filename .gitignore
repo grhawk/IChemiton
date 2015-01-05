@@ -53,6 +53,9 @@ docs/_build/
 # PyBuilder
 target/
 
-#Emacs 
+# Emacs 
 \#*\#
 *~
+
+# Notebook Checkpoints
+.*checkpoints
