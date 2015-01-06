@@ -59,3 +59,8 @@ target/
 
 # Notebook Checkpoints
 .*checkpoints
+
+# Ipython Profiles cache files
+history.sqlite
+nbserver*
+kernel*
