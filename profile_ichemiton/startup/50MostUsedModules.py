@@ -3,9 +3,21 @@ from __future__ import print_function
 import IPython.utils as ut
 import sys, os
 
-sys.path.append(os.path.join(ut.path.locate_profile('ichemiton'), 'modules'))
+IChemiton_dir = ut.path.locate_profile('ichemiton')
 
-print('\nModules:\n cinfony\n cinfony -> rdk, pybel\n PyMol')
+sys.path.append(os.path.join(IChemiton_dir, 'modules'))
+
+print('\nChemistry Modules:\n cinfony\n cinfony -> rdk, pybel\n PyMol')
 from cinfony import rdk, pybel  #https://code.google.com/p/cinfony/
 import PyMol
 import cinfony
+
+print('\nMath Modules:\n numpy as np\n mathplotlib.pyplot as plt')
+import numpy as np
+import mathplotlib as plt
+
+# Set the path for the matplotlib config file
+os.environ['MPLCONFIGDIR'] = os.path.join(IChemiton_dir, 'config')
+
+# Add the profile bin directory to the PATH variable
+os.environ['PATH'] += os.pathsep + os.path.join(IChemiton_dir, 'bin')
