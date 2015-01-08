@@ -14,6 +14,7 @@ c.InteractiveShellApp.extensions = [
 c.InteractiveShellApp.exec_lines = [
 ]
 
+c.IPKernelApp.matplotlib = 'inline'
 
 # NotebookApp will inherit config from: BaseIPythonApplication, Application
 
