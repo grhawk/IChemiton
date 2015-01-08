@@ -2,9 +2,16 @@
 
 from __future__ import print_function
 
+#%matplotlib
+# import matplotlib
+# matplotlib.use('AGG')
+# print(matplotlib.get_backend())
+
 import numpy as np
 import matplotlib.pyplot as plt
 import itertools
+
+
 
 config = {
     'xlabel_fontsize': 16,
@@ -22,17 +29,6 @@ def main():
     filenames = args.filenames
     labels = _parseKeys(filenames, columns, args.keys)
    
-    # if config['marker_default']:
-    #     if args.markers:
-    #         marker = itertools.cycle(('', ''))
-    #     else:
-    #         marker = itertools.cycle(config['marker_to_cycle'])
-    # else:
-    #     if args.markers:
-    #         marker = itertools.cycle(config['marker_to_cycle'])
-    #     else:
-    #         marker = itertools.cycle(('', ''))
-
     if _toggle(config['marker_default'], args.markers):
         marker = itertools.cycle(config['marker_to_cycle'])
     else:
@@ -43,6 +39,9 @@ def main():
     else:
         linestyle = ''
 
+    if args.xlabel: plt.xlabel(args.xlabel, fontsize=config['xlabel_fontsize'])
+    if args.ylabel: plt.ylabel(args.ylabel, fontsize=config['ylabel_fontsize'])
+
     k = 0
     for filename in filenames:
         data = np.loadtxt(filename, usecols=columns)
@@ -50,16 +49,13 @@ def main():
             plt.plot(data.T[0],data.T[i+1], label=labels[k], marker=marker.next(), linestyle=linestyle)
             k += 1
 
-    if args.xlabel: plt.xlabel(args.xlabel, fontsize=config['xlabel_fontsize'])
-    if args.ylabel: plt.ylabel(args.ylabel, fontsize=config['ylabel_fontsize'])
-
     if args.legend: 
         lg=plt.legend(loc='best', prop={'size':'10'}, fancybox=True)
         lg.draw_frame(False)
 
     if args.xrange: plt.xlim(_parseRange(args.xrange, plt.xlim()))
     if args.yrange: plt.ylim(_parseRange(args.yrange, plt.ylim()))
-
+    
     plt.show()
 
 def _parseRange(rangel, lims):
@@ -109,11 +105,14 @@ def _parseColumns(columns):
     import re
     tmp = []
     colRange = re.compile('(\d+)-(\d+)')
-    for c in columns:
-        if colRange.match(c):
-            tmp = tmp + range(int(colRange.match(c).group(1)), int(colRange.match(c).group(2))+1)
-        else:
-            tmp.append(int(c))
+    if columns:
+        for c in columns:
+            if colRange.match(c):
+                tmp = tmp + range(int(colRange.match(c).group(1)), int(colRange.match(c).group(2))+1)
+            else:
+                tmp.append(int(c))
+    else:
+        tmp = [1,2]
     
     return map(lambda x: x-1, tmp) # To use column indexes starting from 1 instrad of 0
 
@@ -135,7 +134,6 @@ def _parser():
                         type = str,
                         nargs = '*',
                         metavar = 'col',
-                        default = '1 2',
                         help = 'columns to build the graph (starting from 1)')
 
     parser.add_argument('-nl', '--no-legend',
