@@ -18,6 +18,3 @@ import mathplotlib as plt
 
 # Set the path for the matplotlib config file
 os.environ['MPLCONFIGDIR'] = os.path.join(IChemiton_dir, 'config')
-
-# Add the profile bin directory to the PATH variable
-os.environ['PATH'] += os.pathsep + os.path.join(IChemiton_dir, 'bin')
