@@ -64,3 +64,6 @@ target/
 history.sqlite
 nbserver*
 kernel*
+
+# SecureNetwork
+*.pem
