@@ -70,3 +70,9 @@ kernel*
 
 # Python c file
 *pyc
+
+# Server files
+log/
+pid/
+db/
+security/
