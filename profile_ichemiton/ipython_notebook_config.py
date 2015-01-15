@@ -26,6 +26,7 @@ c.IPKernelApp.matplotlib = 'inline'
 
 # The IP address the notebook server will listen on.
 # c.NotebookApp.ip = 'localhost'
+c.NotebookApp.ip = '*'
 
 # DEPRECATED use base_url
 # c.NotebookApp.base_project_url = '/'
@@ -59,7 +60,7 @@ c.NotebookApp.open_browser = False
 # c.NotebookApp.log_datefmt = '%Y-%m-%d %H:%M:%S'
 
 # The port the notebook server will listen on.
-# c.NotebookApp.port = 8888
+c.NotebookApp.port = 8899
 
 # Whether to overwrite existing config files when copying
 c.NotebookApp.overwrite = False
@@ -69,7 +70,7 @@ c.NotebookApp.overwrite = False
 # Use '*' to allow any origin to access your server.
 # 
 # Takes precedence over allow_origin_pat.
-# c.NotebookApp.allow_origin = ''
+#c.NotebookApp.allow_origin = '*'
 
 # Whether to enable MathJax for typesetting math/TeX
 # 
@@ -92,12 +93,12 @@ c.NotebookApp.overwrite = False
 # c.NotebookApp.allow_origin_pat = ''
 
 # The full path to an SSL/TLS certificate file.
-# c.NotebookApp.certfile = u''
+c.NotebookApp.certfile = u'/home/petragli/MyProjects/IChemiton/profile_ichemiton/config/mycert.pem'
 
 # The base URL for the notebook server.
 # 
 # Leading and trailing slashes can be omitted, and will automatically be added.
-# c.NotebookApp.base_url = '/'
+#c.NotebookApp.base_url = '/home/petragli'
 
 # The directory to use for notebooks and kernels.
 # c.NotebookApp.notebook_dir = u'/home/petragli/.ipython'
@@ -131,7 +132,7 @@ c.NotebookApp.overwrite = False
 #   from IPython.lib import passwd; passwd()
 # 
 # The string should be of the form type:salt:hashed-password.
-# c.NotebookApp.password = u''
+c.NotebookApp.password = u'sha1:30882f6c6fe6:3fd5b4e0c984f6a5eecbb6669e0cffe73085ea3c'
 
 # Set the Access-Control-Allow-Credentials: true header
 # c.NotebookApp.allow_credentials = False
@@ -188,7 +189,7 @@ c.NotebookApp.overwrite = False
 # c.IPKernelApp.displayhook_class = 'IPython.kernel.zmq.displayhook.ZMQDisplayHook'
 
 # Set the IP or interface on which the kernel will listen.
-# c.IPKernelApp.ip = u''
+#c.IPKernelApp.ip = u'*'
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
