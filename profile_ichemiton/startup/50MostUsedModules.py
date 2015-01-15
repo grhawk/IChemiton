@@ -17,7 +17,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 # Settings for pandas
-pd.set_option('display.notebook_repr_html', True)
+pd.set_option('display.notebook_repr_html', True) # Print the data directly in a nice table
+pd.set_option('display.max_rows', 500) # Display until to 500 rows
 
 
 # Set the path for the matplotlib config file
