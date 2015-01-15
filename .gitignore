@@ -67,3 +67,6 @@ kernel*
 
 # SecureNetwork
 *.pem
+
+# Python c file
+*pyc
