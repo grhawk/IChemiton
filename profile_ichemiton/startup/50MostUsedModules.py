@@ -12,9 +12,16 @@ from cinfony import rdk, pybel  #https://code.google.com/p/cinfony/
 import PyMol
 import cinfony
 
-print('\nMath Modules:\n numpy as np\n mathplotlib.pyplot as plt')
+print('\nMath Modules:\n numpy as np\n mathplotlib.pyplot as plt\n pandas as pd')
 import numpy as np
-import mathplotlib as plt
+import matplotlib.pyplot as plt
+import pandas as pd
+# Settings for pandas
+pd.set_option('display.notebook_repr_html', True)
+
 
 # Set the path for the matplotlib config file
 os.environ['MPLCONFIGDIR'] = os.path.join(IChemiton_dir, 'config')
+
+# At a certain point think to use plotly:
+# http://nbviewer.ipython.org/gist/nipunreddevil/7734529

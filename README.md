@@ -24,3 +24,7 @@ and then run the notebook as
 Some Example
 ------------
 Check out some example on [nbviewer](http://nbviewer.ipython.org/github/grhawk/IChemiton/blob/master/example/Examples.ipynb).
+
+TODO
+----
+- [ ] Make a nice function for plotly (maybe even directly inside the pandas module)
