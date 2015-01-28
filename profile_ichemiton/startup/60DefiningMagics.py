@@ -32,5 +32,13 @@ class MyMagics(Magics):
     #     v.GetPNG()
     #     return
 
+    @line_magic
+    def mplot(self, *args):
+        """Use the pyplot script to display a graph in the notebook
+        Use %mplot -h for help"""
+        mpyplot = os.path.join(bindir, 'mpyplot')
+        get_ipython().magic('%run '+str(mpyplot)+' '+' '.join(args))
+        return
+
 ip = get_ipython()
 ip.register_magics(MyMagics)
