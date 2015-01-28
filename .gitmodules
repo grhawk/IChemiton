@@ -1,3 +1,6 @@
 [submodule "profile_ichemiton/submodules/multiPlot"]
 	path = dot.ipython/profile_ichemiton/submodules/multiPlot
 	url = git@github.com:grhawk/multiPlot.git
+[submodule "third-party-modules/ipython_extensions"]
+	path = third-party-modules/ipython_extensions
+	url = git@github.com:minrk/ipython_extensions.git
